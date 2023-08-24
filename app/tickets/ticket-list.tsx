@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { DeleteButton } from "./delete-ticket";
 
 const getTicket = async () => {
   // await new Promise((resolve) => setTimeout(resolve, 3000));
@@ -19,6 +20,7 @@ export const TicketList = async () => {
     <>
       {tickets.map((ticket: any) => (
         <div key={ticket.id} className="card my-5">
+          <DeleteButton id={ticket.id} />
           <Link href={`/tickets/${ticket.id}`}>
             <h3>{ticket.title}</h3>
             <p>{ticket.body.slice(0, 200)}...</p>

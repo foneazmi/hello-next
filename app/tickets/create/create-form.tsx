@@ -19,7 +19,7 @@ export const CreateForm = () => {
       title,
       body,
       priority,
-      user_email: "mario@netninja.dev",
+      user_email: "ghost@khan.my.id",
     };
 
     const res = await fetch(
@@ -35,6 +35,7 @@ export const CreateForm = () => {
       router.refresh();
       router.push("/tickets");
     }
+    setIsLoading(false);
   };
 
   return (
