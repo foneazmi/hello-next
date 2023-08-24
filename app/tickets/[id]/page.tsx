@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-export const dynamicParam = false;
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const res = await fetch(
