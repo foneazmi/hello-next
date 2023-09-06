@@ -2,7 +2,11 @@
 
 import { useTheme } from "@/stores";
 
-export const ThemeItem = ({ theme }) => {
+type themeProps = {
+  theme: string;
+};
+
+export const ThemeItem = ({ theme }: themeProps) => {
   const { setTheme } = useTheme();
   return (
     <div

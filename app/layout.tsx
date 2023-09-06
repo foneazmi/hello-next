@@ -4,8 +4,9 @@ import { Suspense } from "react";
 import Loading from "./loading";
 
 export const metadata = {
-  title: "Hello Next",
-  description: "Just hello",
+  title: "Farkhan Azmi",
+  description:
+    "Talented software engineer. who always try to challenge and learn some new experiences, knowledge, skills. Have the ability to work alone or collaborate with a team.",
 };
 
 export default function RootLayout({

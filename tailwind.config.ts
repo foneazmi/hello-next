@@ -6,13 +6,6 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {
-    extend: {
-      colors: {
-        primary: "#7856ff",
-      },
-    },
-  },
   plugins: [require("daisyui")],
   daisyui: {
     themes: true,
