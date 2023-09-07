@@ -1,6 +1,6 @@
 "use client";
 import { Icons } from "@/helpers";
-import { useBio, useTheme } from "@/stores";
+import { useBio } from "@/stores";
 import Image from "next/image";
 
 export const Profile = () => {
@@ -15,6 +15,7 @@ export const Profile = () => {
             alt="photo"
             height={300}
             width={300}
+            placeholder="blur"
           />
         </div>
       </div>
