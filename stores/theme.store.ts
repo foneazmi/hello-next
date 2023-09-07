@@ -9,7 +9,7 @@ type Store = {
 export const useTheme = create<Store>()(
   persist(
     (set) => ({
-      theme: "winter",
+      theme: "cupcake",
       setTheme: (theme: string) => set({ theme }),
     }),
     {

@@ -13,7 +13,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     useTheme.persist.rehydrate();
     fetch();
     setLoading(false);
-  }, []);
+  }, [fetch]);
 
   return !loading && <div data-theme={theme}>{children}</div>;
 };

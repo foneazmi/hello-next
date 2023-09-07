@@ -8,14 +8,17 @@ export const Profile = () => {
   return (
     <div className="flex flex-col sm:flex-row mx-4 duration-200">
       <div className="avatar">
-        <div className={`h-28 w-28 sm:w-36 sm:h-36 duration-200`}>
+        <div
+          className={`h-28 w-28 sm:w-36 sm:h-36 duration-200 overflow-hidden rounded-lg `}
+        >
           <Image
-            className="rounded-lg"
+            className="hover:scale-110 duration-150"
             src={bio.photo}
             alt="photo"
             height={300}
             width={300}
             placeholder="blur"
+            blurDataURL={`${bio.photo}&s=100`}
           />
         </div>
       </div>
