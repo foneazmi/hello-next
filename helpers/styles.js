@@ -1,4 +1,10 @@
-import { FaGithub, FaLinkedin, FaTelegram, FaWhatsapp } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaGithub,
+  FaLinkedin,
+  FaTelegram,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 export const THEME = [
   "light",
@@ -69,4 +75,5 @@ export const Icons = {
   li: <FaLinkedin />,
   gh: <FaGithub />,
   tg: <FaTelegram />,
+  email: <FaEnvelope />,
 };
