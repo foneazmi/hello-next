@@ -1,10 +1,21 @@
-"use client";
-import { Icons } from "@/helpers";
-import { useBio } from "@/stores";
 import Image from "next/image";
+import {
+  FaEnvelope,
+  FaGithub,
+  FaLinkedin,
+  FaTelegram,
+  FaWhatsapp,
+} from "react-icons/fa";
 
-export const Profile = () => {
-  const { bio } = useBio();
+export const Icons = {
+  wa: <FaWhatsapp />,
+  li: <FaLinkedin />,
+  gh: <FaGithub />,
+  tg: <FaTelegram />,
+  email: <FaEnvelope />,
+};
+
+export const Profile = ({ bio }) => {
   return (
     <div className="flex flex-col sm:flex-row mx-4 duration-200">
       <div className="avatar">

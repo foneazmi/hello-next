@@ -1,8 +1,7 @@
 "use client";
-import { usePathname } from "next/navigation";
 import { FaRegLaughWink, FaRegObjectGroup } from "react-icons/fa";
 import { NavbarItem } from "./navbar-item";
-
+import { usePathname } from "next/navigation";
 const ROUTE = [
   {
     text: "Me",

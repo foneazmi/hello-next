@@ -1,4 +1,3 @@
-import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import { Suspense } from "react";
 import Loading from "./loading";
@@ -18,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Suspense fallback={<Loading />}>
-          <ThemeProvider>{children}</ThemeProvider>
+          <div data-theme="cupcake">{children}</div>
         </Suspense>
       </body>
     </html>

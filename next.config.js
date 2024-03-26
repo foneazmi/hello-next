@@ -14,6 +14,12 @@ const nextConfig = {
         port: "",
         pathname: "/u/**",
       },
+      {
+        protocol: "https",
+        hostname: "pb.khan.my.id",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };
