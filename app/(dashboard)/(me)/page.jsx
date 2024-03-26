@@ -4,7 +4,7 @@ import { Profile } from "./Profile";
 async function getMe() {
   const res = await fetch("https://api.khan.my.id/me", {
     next: {
-      revalidate: 30,
+      revalidate: 60 * 60 * 24 * 30,
     },
   });
   return res.json();
