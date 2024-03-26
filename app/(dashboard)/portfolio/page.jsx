@@ -36,7 +36,6 @@ const PortfolioItem = ({ image, title, description, link, icon, text }) => (
 
 export default async function Page() {
   const me = await getMe();
-  console.log("me", me);
   return (
     <div className="overflow-y-auto h-full justify-center items-center flex scrollbar-hide ">
       <div className="overflow-y-auto scrollbar-hide p-4 h-full flex items-center">

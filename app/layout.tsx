@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Suspense fallback={<Loading />}>
-          <div data-theme="cupcake">{children}</div>
+          <div data-theme="winter">{children}</div>
         </Suspense>
       </body>
     </html>
