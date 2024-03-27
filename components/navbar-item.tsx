@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { memo } from "react";
 
-export const NavbarItem = (props: any) => {
+export const NavbarItem = memo((props: any) => {
   const iconStyle = props.active
     ? "bg-primary px-4 py-2 rounded-full text-primary-content"
     : "py-2 rounded-full text-base-content bg-blend-darken duration-500 transition-all group-hover:bg-primary group-hover:text-primary-content group-hover:px-4";
@@ -15,4 +16,4 @@ export const NavbarItem = (props: any) => {
       </span>
     </Link>
   );
-};
+});
