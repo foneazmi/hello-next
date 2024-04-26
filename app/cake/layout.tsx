@@ -1,20 +1,13 @@
-import { Header } from "@/components/header";
+import { FaCakeCandles } from "react-icons/fa6";
 import { Navbar } from "../../components/navbar";
-import { FaRegLaughWink, FaRegObjectGroup } from "react-icons/fa";
 
 const ROUTE = [
   {
-    text: "Me",
-    path: "/",
-    icon: <FaRegLaughWink size={18} />,
-  },
-  {
-    text: "Portfolio",
-    path: "/portfolio",
-    icon: <FaRegObjectGroup size={18} />,
+    text: "Cake",
+    path: "/cake",
+    icon: <FaCakeCandles size={18} />,
   },
 ];
-
 export default function RootLayout({
   children,
 }: {
@@ -27,7 +20,6 @@ export default function RootLayout({
         <div className="flex-1 w-full bg-base-100 sm:rounded-3xl overflow-hidden sm:my-2 sm:mr-2">
           {children}
         </div>
-        <Header />
       </div>
     </main>
   );
