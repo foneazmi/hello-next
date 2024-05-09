@@ -1,4 +1,3 @@
-import { Header } from "@/components/header";
 import { Navbar } from "../../components/navbar";
 import { FaRegLaughWink, FaRegObjectGroup } from "react-icons/fa";
 
@@ -27,7 +26,6 @@ export default function RootLayout({
         <div className="flex-1 w-full bg-base-100 sm:rounded-3xl overflow-hidden sm:my-2 sm:mr-2">
           {children}
         </div>
-        <Header />
       </div>
     </main>
   );
