@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Suspense } from "react";
 import Loading from "./loading";
-
+import { SpeedInsights } from "@vercel/speed-insights/next";
 export const metadata = {
   title: "Farkhan Azmi",
   description:
@@ -16,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <SpeedInsights />
         <Suspense fallback={<Loading />}>
           <div data-theme="winter">{children}</div>
         </Suspense>
