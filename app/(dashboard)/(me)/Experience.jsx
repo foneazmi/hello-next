@@ -17,7 +17,7 @@ const ExperienceItem = ({ company, roles }) => {
   return (
     <div className="flex mt-4 flex-col group hover:scale-110 hover:translate-x-8 duration-200">
       <div className="flex">
-        <div className="h-5 group-hover:w-10 duration-200 w-2 bg-primary mr-2 rounded" />
+        <div className="h-5 group-hover:w-10 duration-200 w-2 bg-primary mr-2 rounded-sm" />
         <p className="antialiased text-base font-extrabold">{company}</p>
       </div>
       {roles?.map((role, index) => (
