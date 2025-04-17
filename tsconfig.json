@@ -28,9 +28,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "helpers/styles.js",
-    "app/(dashboard)/(me)/Profile.jsx",
-    "app/(dashboard)/(me)/Experience.jsx",
-    "app/(dashboard)/portfolio/page.jsx"
+    "app/(dashboard)/(me)/Profile.tsx",
+    "app/(dashboard)/(me)/Experience.tsx",
+    "app/(dashboard)/portfolio/page.tsx"
   ],
   "exclude": ["node_modules"]
 }

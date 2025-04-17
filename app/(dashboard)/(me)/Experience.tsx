@@ -1,10 +1,40 @@
 import { getDuration } from "@/helpers";
 
-export const Experience = ({ bio }) => {
+interface Role {
+  role: string;
+  startDate: string;
+  endDate?: string;
+  location: string;
+  desc: string;
+}
+
+interface ExperienceItem {
+  company: string;
+  roles?: Role[];
+}
+
+interface Bio {
+  experiences?: ExperienceItem[];
+}
+
+interface ExperienceProps {
+  bio: Bio;
+}
+
+interface ExperienceItemProps {
+  company: string;
+  roles?: Role[];
+}
+
+interface RoleItemProps {
+  role: Role;
+}
+
+export const Experience = ({ bio }: ExperienceProps) => {
   return (
     bio.experiences && (
       <div>
-        <p className=" text-xl">Experience</p>
+        <p className="text-xl">Experience</p>
         {bio.experiences.map((experience, index) => (
           <ExperienceItem key={`${index}-experiences`} {...experience} />
         ))}
@@ -13,11 +43,11 @@ export const Experience = ({ bio }) => {
   );
 };
 
-const ExperienceItem = ({ company, roles }) => {
+const ExperienceItem = ({ company, roles }: ExperienceItemProps) => {
   return (
-    <div className="flex mt-4 flex-col group hover:scale-110 hover:translate-x-8 duration-200">
+    <div className="flex mt-4 flex-col">
       <div className="flex">
-        <div className="h-5 group-hover:w-10 duration-200 w-2 bg-primary mr-2 rounded-sm" />
+        <div className="h-5 w-2 bg-primary mr-2 rounded-sm" />
         <p className="antialiased text-base font-extrabold">{company}</p>
       </div>
       {roles?.map((role, index) => (
@@ -27,10 +57,10 @@ const ExperienceItem = ({ company, roles }) => {
   );
 };
 
-const RoleItem = ({ role }) => (
-  <div className="flex mb-2 group/item">
-    <div className="w-2 mr-2 group-hover/item:mr-3 mt-2 duration-200">
-      <div className="w-2 h-2 bg-secondary rounded-full duration-200 group-hover/item:h-9 group-hover/item:w-3" />
+const RoleItem = ({ role }: RoleItemProps) => (
+  <div className="flex mb-2">
+    <div className="w-2 mr-2 mt-2">
+      <div className="w-2 h-2 bg-secondary rounded-full" />
     </div>
     <div>
       <p className="antialiased text-sm font-semibold">{role.role}</p>

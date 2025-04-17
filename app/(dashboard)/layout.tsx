@@ -1,7 +1,19 @@
 import { Navbar } from "../../components/navbar";
-import { FaRegLaughWink, FaRegObjectGroup } from "react-icons/fa";
+import {
+  FaRegLaughWink,
+  FaRegObjectGroup,
+  FaRegChartBar,
+} from "react-icons/fa";
+import { ReactNode } from "react";
 
-const ROUTE = [
+interface RouteItem {
+  text: string;
+  path: string;
+  icon: ReactNode;
+  external?: boolean;
+}
+
+const ROUTES: RouteItem[] = [
   {
     text: "Me",
     path: "/",
@@ -12,21 +24,25 @@ const ROUTE = [
     path: "/portfolio",
     icon: <FaRegObjectGroup size={18} />,
   },
+  {
+    text: "Status",
+    path: "https://status.khan.my.id", // Replace with your actual status page URL
+    icon: <FaRegChartBar size={18} />,
+    external: true, // Mark as external link
+  },
 ];
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+interface RootLayoutProps {
+  children: ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <main>
-      <div className="flex h-screen w-screen bg-base-300 flex-col-reverse sm:flex-row">
-        <Navbar route={ROUTE} />
-        <div className="flex-1 w-full bg-base-100 sm:rounded-3xl overflow-hidden sm:my-2 sm:mr-2">
-          {children}
-        </div>
-      </div>
+    <main className="flex h-screen w-screen bg-base-300 flex-col-reverse sm:flex-row">
+      <Navbar routes={ROUTES} />
+      <section className="flex-1 w-full bg-base-100 overflow-hidden sm:rounded-3xl sm:my-2 sm:mr-2">
+        {children}
+      </section>
     </main>
   );
 }
