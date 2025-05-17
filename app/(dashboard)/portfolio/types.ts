@@ -17,6 +17,7 @@ export interface MeResponse {
 }
 
 export interface PortfolioItemProps {
+  index?: number;
   image?: string;
   title: string;
   description: string;

@@ -1,49 +1,45 @@
 import { Experience } from "./Experience";
-import { Contact, Profile } from "./Profile";
+import { Profile } from "./Profile";
+import { BioProps } from "./types";
+import { Suspense } from "react";
 
-interface BioData {
-  name: string;
-  title: string;
-  about: string;
-  skills: string[];
-  experiences?: {
-    company: string;
-    role: string;
-    duration: string;
-    description: string;
-  }[];
-  photo: string;
-  job: string;
-  description: string;
-  contacts?: Contact[];
-}
-
-async function getMe(): Promise<BioData> {
+// Fetch user data with 24-hour revalidation
+async function fetchMe(): Promise<BioProps> {
   const res = await fetch("https://api.khan.my.id/me", {
-    next: {
-      revalidate: 60 * 60 * 24, // Revalidate every 24 hours
-    },
+    next: { revalidate: 60 * 60 * 24 },
   });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch bio data");
-  }
-
+  if (!res.ok) throw new Error("Failed to fetch portfolio data");
   return res.json();
 }
 
-export default async function Me() {
-  const me = await getMe();
+function Loading() {
+  return (
+    <div className="flex h-full items-center justify-center">
+      <span className="loading loading-spinner loading-lg" />
+    </div>
+  );
+}
+
+async function MeContent() {
+  const me = await fetchMe();
 
   return (
-    <div className="overflow-y-auto h-full justify-center items-center flex scrollbar-hide">
-      <div className="m-auto xl:w-6/12 lg:w-8/12 sm:w-10/12 w-full py-10 h-auto">
-        <Profile bio={me} />
-        <div className="flex flex-col mx-4">
-          <div className="divider" />
-          <Experience bio={me} />
-        </div>
+    <div className="m-auto w-full py-10 h-auto sm:w-10/12 lg:w-8/12 xl:w-6/12 animate-fade-in">
+      <Profile bio={me} />
+      <div className="flex flex-col mx-4">
+        <div className="divider" />
+        <Experience bio={me} />
       </div>
+    </div>
+  );
+}
+
+export default function Me() {
+  return (
+    <div className="flex h-full items-center justify-center overflow-y-auto scrollbar-hide">
+      <Suspense fallback={<Loading />}>
+        <MeContent />
+      </Suspense>
     </div>
   );
 }

@@ -1,36 +1,7 @@
 import { getDuration } from "@/helpers";
+import { ExperienceItemProps, ProfileProps, RoleItemProps } from "./types";
 
-interface Role {
-  role: string;
-  startDate: string;
-  endDate?: string;
-  location: string;
-  desc: string;
-}
-
-interface ExperienceItem {
-  company: string;
-  roles?: Role[];
-}
-
-interface Bio {
-  experiences?: ExperienceItem[];
-}
-
-interface ExperienceProps {
-  bio: Bio;
-}
-
-interface ExperienceItemProps {
-  company: string;
-  roles?: Role[];
-}
-
-interface RoleItemProps {
-  role: Role;
-}
-
-export const Experience = ({ bio }: ExperienceProps) => {
+export const Experience = ({ bio }: ProfileProps) => {
   return (
     bio.experiences && (
       <div>

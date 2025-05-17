@@ -4,14 +4,7 @@ import {
   FaRegObjectGroup,
   FaRegChartBar,
 } from "react-icons/fa";
-import { ReactNode } from "react";
-
-interface RouteItem {
-  text: string;
-  path: string;
-  icon: ReactNode;
-  external?: boolean;
-}
+import { RootLayoutProps, RouteItem } from "./types";
 
 const ROUTES: RouteItem[] = [
   {
@@ -31,10 +24,6 @@ const ROUTES: RouteItem[] = [
     external: true, // Mark as external link
   },
 ];
-
-interface RootLayoutProps {
-  children: ReactNode;
-}
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
