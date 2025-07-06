@@ -66,7 +66,7 @@ export default async function Page() {
   );
 }
 
-export const AppItem = memo(function NavbarItem({ item, index }: any) {
+const AppItem = memo(function NavbarItem({ item, index }: any) {
   return item.external ? (
     <a
       key={`${item.link}${index}`}
