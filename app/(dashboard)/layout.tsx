@@ -4,6 +4,9 @@ import {
   FaRegObjectGroup,
   FaRegChartBar,
   FaChartArea,
+  FaAppleAlt,
+  FaApper,
+  FaDiceD6,
 } from "react-icons/fa";
 import { RootLayoutProps, RouteItem } from "./types";
 
@@ -19,15 +22,9 @@ const ROUTES: RouteItem[] = [
     icon: <FaRegObjectGroup size={18} />,
   },
   {
-    text: "🚧StockAI",
-    path: "/stock",
-    icon: <FaChartArea size={18} />,
-  },
-  {
-    text: "Status",
-    path: "https://status.khan.my.id", // Replace with your actual status page URL
-    icon: <FaRegChartBar size={18} />,
-    external: true, // Mark as external link
+    text: "Apps",
+    path: "/apps",
+    icon: <FaDiceD6 size={18} />,
   },
 ];
 
