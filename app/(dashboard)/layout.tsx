@@ -3,6 +3,7 @@ import {
   FaRegLaughWink,
   FaRegObjectGroup,
   FaRegChartBar,
+  FaChartArea,
 } from "react-icons/fa";
 import { RootLayoutProps, RouteItem } from "./types";
 
@@ -16,6 +17,11 @@ const ROUTES: RouteItem[] = [
     text: "Portfolio",
     path: "/portfolio",
     icon: <FaRegObjectGroup size={18} />,
+  },
+  {
+    text: "🚧StockAI",
+    path: "/stock",
+    icon: <FaChartArea size={18} />,
   },
   {
     text: "Status",
