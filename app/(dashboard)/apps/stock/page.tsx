@@ -2,7 +2,9 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 export default async function Page() {
-  const data = await fetch("https://api.khan.my.id/sa/list");
+  const data = await fetch("https://api.khan.my.id/sa/list", {
+    cache: "no-store",
+  });
   if (!data.ok) {
     notFound();
   }
