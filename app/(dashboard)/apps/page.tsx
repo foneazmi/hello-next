@@ -27,9 +27,10 @@ const APPS = [
     external: true,
   },
   {
-    text: "Stock AI 🚧",
-    link: "apps/stock",
+    text: "Stock Insight",
+    link: "https://stock.khan.my.id/",
     icon: <FaRegChartBar size={36} />,
+    external: true,
   },
 ];
 
